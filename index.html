@@ -30,14 +30,18 @@
 
         body {
             font-family: 'Noto Sans Georgian', sans-serif;
-            background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%);
+            background-image: url('https://i.imgur.com/3SpVQEz.jpeg');
+            background-size: cover;
+            background-position: center top;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
             color: #F1F5F9;
             overflow-x: hidden;
             position: relative;
             padding-top: 120px;
         }
 
-        /* Animated background effects */
+        /* Dark overlay on top of background image */
         body::before {
             content: '';
             position: fixed;
@@ -45,12 +49,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+            background: rgba(0, 0, 0, 0.65);
             pointer-events: none;
             z-index: 0;
-            animation: breathe 8s ease-in-out infinite;
         }
 
         @keyframes breathe {
@@ -114,8 +115,21 @@
         }
 
         .logo-symbol {
-            font-size: 48px;
-            animation: spin 3s linear infinite;
+            animation: spin 4s linear infinite;
+            width: 58px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-symbol img {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            mix-blend-mode: screen;
+            filter: brightness(1.3) saturate(1.6);
+            object-fit: cover;
         }
 
         @keyframes spin {
@@ -286,12 +300,13 @@
         }
 
         .news-card {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(51, 65, 85, 0.8));
+            background: linear-gradient(135deg, rgba(15, 0, 0, 0.88), rgba(40, 5, 5, 0.82));
             border-radius: 20px;
             overflow: hidden;
             transition: all 0.4s ease;
-            border: 2px solid transparent;
+            border: 1px solid rgba(180, 20, 20, 0.3);
             position: relative;
+            backdrop-filter: blur(6px);
         }
 
         .news-card::before {
@@ -303,7 +318,7 @@
             bottom: 0;
             border-radius: 20px;
             padding: 2px;
-            background: linear-gradient(135deg, var(--naruto-orange), var(--chakra-cyan));
+            background: linear-gradient(135deg, #C41E3A, #6B0000, #8B0057);
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
@@ -317,13 +332,13 @@
 
         .news-card:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 20px 50px rgba(196, 30, 58, 0.4), 0 0 20px rgba(139, 0, 0, 0.3);
         }
 
         .news-image {
             width: 100%;
             height: 220px;
-            background: linear-gradient(135deg, var(--konoha-green), var(--shinobi-blue));
+            background: linear-gradient(135deg, #2D0000, #6B0000, #3D0040);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -339,7 +354,7 @@
             left: 50%;
             width: 0;
             height: 0;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(196, 30, 58, 0.2);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             transition: width 0.6s, height 0.6s;
@@ -356,7 +371,7 @@
 
         .news-tag {
             display: inline-block;
-            background: var(--naruto-orange);
+            background: linear-gradient(135deg, #8B0000, #C41E3A);
             color: white;
             padding: 6px 15px;
             border-radius: 20px;
@@ -390,7 +405,7 @@
         }
 
         .read-more {
-            color: var(--chakra-cyan);
+            color: #FF6B6B;
             text-decoration: none;
             font-weight: 600;
             display: inline-flex;
@@ -1105,10 +1120,10 @@
 
         /* Myths category card special color */
         [onclick="showSubcategory('myths')"] .news-image {
-            background: linear-gradient(135deg, #4C1D95, #7C3AED);
+            background: linear-gradient(135deg, #1A0030, #4C0070, #2D0040);
         }
         [onclick="showSubcategory('myths')"] .news-tag {
-            background: #7C3AED;
+            background: linear-gradient(135deg, #4C0070, #6B00A0);
         }
 
         /* ===== AUTH SYSTEM ===== */
@@ -1653,7 +1668,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <div class="logo-symbol">🍥</div>
+                    <div class="logo-symbol"><img src="https://i.imgur.com/bEGGqOZ.jpeg" alt="Sharingan" /></div>
                     <div class="logo-text">
                         <h1>ნარუტოს სამყარო</h1>
                         <p>NARUTO WORLD</p>
