@@ -599,7 +599,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(5, 0, 0, 0.96);
             backdrop-filter: blur(10px);
             z-index: 2000;
             overflow-y: auto;
@@ -612,14 +612,14 @@
         }
 
         .modal-content {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.98), rgba(51, 65, 85, 0.95));
+            background: linear-gradient(135deg, rgba(20, 0, 0, 0.98), rgba(45, 5, 5, 0.97));
             border-radius: 30px;
             max-width: 900px;
             width: calc(100% - 40px);
             padding: 50px 40px 40px;
             position: relative;
-            border: 3px solid var(--naruto-orange);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+            border: 3px solid #8B0000;
+            box-shadow: 0 30px 80px rgba(139, 0, 0, 0.5), 0 0 40px rgba(196, 30, 58, 0.2);
             animation: slideUp 0.4s ease-out;
             margin: 60px auto 40px;
             max-height: none;
@@ -643,7 +643,7 @@
             position: fixed;
             top: 30px;
             right: 30px;
-            background: var(--naruto-orange);
+            background: linear-gradient(135deg, #8B0000, #C41E3A);
             color: white;
             border: none;
             width: 55px;
@@ -655,16 +655,16 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.5);
             z-index: 2001;
             font-weight: 700;
             line-height: 1;
         }
 
         .modal-close:hover {
-            background: var(--accent-yellow);
+            background: linear-gradient(135deg, #C41E3A, #FF0040);
             transform: rotate(90deg) scale(1.15);
-            box-shadow: 0 8px 25px rgba(253, 185, 19, 0.6);
+            box-shadow: 0 8px 25px rgba(196, 30, 58, 0.7);
         }
 
         .modal-close:active {
@@ -690,7 +690,7 @@
             color: var(--accent-yellow);
             text-align: center;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 0 var(--naruto-orange);
+            text-shadow: 2px 2px 0 #8B0000;
         }
 
         .modal-meta {
@@ -702,7 +702,7 @@
         }
 
         .modal-meta span {
-            color: var(--chakra-cyan);
+            color: #FF6B6B;
             font-size: 16px;
             font-weight: 600;
         }
@@ -720,7 +720,7 @@
         }
 
         .modal-body h3 {
-            color: var(--naruto-orange);
+            color: #C41E3A;
             font-size: 28px;
             margin: 30px 0 15px;
             font-family: 'Bebas Neue', cursive;
@@ -739,7 +739,7 @@
         .modal-footer {
             margin-top: 40px;
             padding-top: 30px;
-            border-top: 2px solid rgba(6, 182, 212, 0.3);
+            border-top: 2px solid rgba(139, 0, 0, 0.5);
             text-align: center;
             width: 100%;
         }
@@ -752,9 +752,9 @@
         }
 
         .share-btn {
-            background: rgba(6, 182, 212, 0.2);
-            color: var(--chakra-cyan);
-            border: 2px solid var(--chakra-cyan);
+            background: rgba(139, 0, 0, 0.2);
+            color: #FF6B6B;
+            border: 2px solid #8B0000;
             padding: 12px 25px;
             border-radius: 25px;
             cursor: pointer;
@@ -764,10 +764,10 @@
         }
 
         .share-btn:hover {
-            background: var(--chakra-cyan);
-            color: var(--shadow-dark);
+            background: #8B0000;
+            color: white;
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3);
+            box-shadow: 0 10px 25px rgba(139, 0, 0, 0.4);
         }
 
         /* Character Modal */
@@ -787,16 +787,16 @@
         }
 
         .stat-item {
-            background: rgba(15, 23, 42, 0.6);
+            background: rgba(40, 0, 0, 0.6);
             padding: 15px;
             border-radius: 10px;
-            border-left: 4px solid var(--naruto-orange);
+            border-left: 4px solid #C41E3A;
             width: 100%;
             box-sizing: border-box;
         }
 
         .stat-label {
-            color: var(--chakra-cyan);
+            color: #FF6B6B;
             font-size: 14px;
             font-weight: 600;
             margin-bottom: 5px;
@@ -836,9 +836,9 @@
 
         /* Back Button */
         .back-btn {
-            background: rgba(6, 182, 212, 0.2);
-            color: var(--chakra-cyan);
-            border: 2px solid var(--chakra-cyan);
+            background: rgba(139, 0, 0, 0.2);
+            color: #FF6B6B;
+            border: 2px solid #8B0000;
             padding: 12px 30px;
             border-radius: 25px;
             font-weight: 600;
@@ -852,8 +852,8 @@
         }
 
         .back-btn:hover {
-            background: var(--chakra-cyan);
-            color: var(--shadow-dark);
+            background: #8B0000;
+            color: white;
             transform: translateX(-5px);
         }
 
@@ -4324,7 +4324,7 @@
 
             const photoHtml = item.photo
                 ? `<div style="text-align:center;margin-bottom:24px;">
-                     <img src="${item.photo}" style="width:160px;height:160px;object-fit:cover;border-radius:50%;border:4px solid var(--naruto-orange);box-shadow:0 0 24px rgba(255,107,53,0.5);">
+                     <img src="${item.photo}" style="width:160px;height:160px;object-fit:cover;border-radius:50%;border:4px solid #C41E3A;box-shadow:0 0 24px rgba(139,0,0,0.6);">
                    </div>`
                 : '';
 
