@@ -4353,14 +4353,18 @@
             }
             updatePreview();
 
-            document.getElementById('editTag').value  = item.tags[0] || '';
-            document.getElementById('editName').value = item.name || '';
-            document.getElementById('editDesc').value = item.desc || '';
-            document.getElementById('editRole').value = '';
+            document.getElementById('editTag').value      = item.tags[0] || '';
+            document.getElementById('editName').value     = item.name || '';
+            document.getElementById('editDesc').value     = item.desc || '';
+            document.getElementById('editRole').value     = '';
+            document.getElementById('editJapanese').value = item.japanese || '';
+            document.getElementById('editFull').value     = item.fullContent || '';
 
-            document.getElementById('fieldTag').style.display  = '';
-            document.getElementById('fieldRole').style.display = 'none';
-            document.getElementById('fieldDesc').style.display = '';
+            document.getElementById('fieldTag').style.display      = '';
+            document.getElementById('fieldRole').style.display     = 'none';
+            document.getElementById('fieldDesc').style.display     = '';
+            document.getElementById('fieldJapanese').style.display = '';
+            document.getElementById('fieldFull').style.display     = '';
 
             document.getElementById('editModal').classList.add('open');
             document.body.style.overflow = 'hidden';
@@ -4409,6 +4413,16 @@
             <div class="edit-field" id="fieldDesc" style="display:none;">
                 <label>აღწერა</label>
                 <textarea id="editDesc" placeholder="მოკლე აღწერა..."></textarea>
+            </div>
+
+            <div class="edit-field" id="fieldJapanese" style="display:none;">
+                <label>იაპონური / ლათინური</label>
+                <input type="text" id="editJapanese" placeholder="例: 螺旋丸 / Rasengan">
+            </div>
+
+            <div class="edit-field" id="fieldFull" style="display:none;">
+                <label>სრული ტექსტი (HTML შეგიძლია)</label>
+                <textarea id="editFull" placeholder="&lt;h3&gt;სათაური&lt;/h3&gt;&lt;p&gt;ტექსტი...&lt;/p&gt;" style="min-height:180px;font-size:13px;font-family:monospace;"></textarea>
             </div>
 
             <div class="edit-btn-row">
@@ -4540,17 +4554,21 @@
             const { category, index, cardEl } = _subcatEditTarget;
             const item = categoriesData[category].items[index];
 
-            const url   = document.getElementById('editUrl').value.trim();
-            const emoji = document.getElementById('editEmoji').value.trim();
-            const name  = document.getElementById('editName').value.trim();
-            const tag   = document.getElementById('editTag').value.trim();
-            const desc  = document.getElementById('editDesc').value.trim();
+            const url      = document.getElementById('editUrl').value.trim();
+            const emoji    = document.getElementById('editEmoji').value.trim();
+            const name     = document.getElementById('editName').value.trim();
+            const tag      = document.getElementById('editTag').value.trim();
+            const desc     = document.getElementById('editDesc').value.trim();
+            const japanese = document.getElementById('editJapanese').value.trim();
+            const full     = document.getElementById('editFull').value.trim();
 
             // Save to data
             item.photo = (_editMode === 'url' && url) ? url : null;
-            if (name) item.name = name;
-            if (tag)  item.tags[0] = tag;
-            if (desc) item.desc = desc;
+            if (name)     item.name = name;
+            if (tag)      item.tags[0] = tag;
+            if (desc)     item.desc = desc;
+            if (japanese) item.japanese = japanese;
+            if (full)     item.fullContent = full;
 
             // Re-render this card in place
             const newCard = renderSubcategoryCard(category, item, index);
